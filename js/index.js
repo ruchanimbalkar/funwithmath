@@ -7,21 +7,82 @@ $(document).ready(function(){
 
 	/*$ is an alias for the entire JQuery API
 	var resultList = jQuery("#resultList");*/
+
+	
 	var tableResults = $("#tableResults");
 	tableResults.text("This is from jQuery. ");
+	
+	console.log("what??");
+	
+
+	var squareResults = $("#squareResults");
+	squareResults.text("This is also from jQuery");
+	
+	
+	var cubeResults = $("#cubeResults");
+	cubeResults.text(" So is this !");
+	
+	$("#cubeForm").on("submit", function(){
+		
+		var num = $("#numb").val();
+		if(isNaN(num)){
+			console.log("Valid number not entered by user");	
+			cubeResults.text("Please enter a valid number and Try again!");
+		}	
+		else {
+			console.log(num);
+			findCube(num);
+					
+		}
+		return false;
+	});
+	
+	
+	function findCube(num){
+			cubeResults.empty();
+			var square = num * num;
+			var cube = num * square;
+			console.log(cube);
+			cubeResults.append(cube);
+		
+	}
+			
+	$("#squareForm").on("submit", function(){
+		
+		var num = $("#num").val();
+		if(isNaN(num)){
+			console.log("Valid number not entered by user");	
+			squareResults.text("Please enter a valid number and Try again!");
+		}	
+		else {
+			console.log(num);
+			findSquare(num);
+					
+		}
+		return false;
+	});
+	
+	function findSquare(num){
+			squareResults.empty();
+			var square = num * num;
+			console.log(square);
+			squareResults.append(square);
+		
+	}
 		
 	$("#tablesForm").on("submit",function(){
 		
-		var num = $("#number").val();
-				
-		console.log("1 num");		
-			tableResults.text("Calculating Table of " + num + "...");
-			
-			
-			displayResults(num);			
-				
-		console.log("2");		
 		
+		var num = $("#number").val();
+		if(isNaN(num)){
+			console.log("Valid number not entered by user");	
+			tableResults.text("Please enter a valid number and Try again!");
+		}		
+		else {
+		  tableResults.text("Calculating Table of " + num + "...");
+		  displayResults(num);			
+		  console.log("Valid number entered by user");		
+		}
 		return false;
 	});	
 	
@@ -47,7 +108,8 @@ $(document).ready(function(){
 				tableResults.append(newResult);
 			}*/
 				
-				
+			var title = "<div> <p>Table of " + num + " </p> </div>"	
+			tableResults.append(title);
 			$.each(table,function(i){
 				var p = num * table[i];
 				console.log(p);
@@ -63,4 +125,6 @@ $(document).ready(function(){
 						
 	}
 	
+
+
 })

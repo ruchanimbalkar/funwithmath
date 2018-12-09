@@ -12,13 +12,13 @@ header, footer
 }
 
 
-#tableResults{
+.results{
 	
 	margin: 5px 0px 5px 0px;
 	padding : 10px;
 	border:solid 3px black;
 	border-radius:2px;
-	float : right;
+	float:right;
 }
 
 .simple-form{
