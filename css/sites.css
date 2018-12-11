@@ -9,7 +9,7 @@ header, footer
 
 #main{
 	height:300px;
-	display:block;
+	
 }
 
 
@@ -19,22 +19,33 @@ header, footer
 	padding : 10px;
 	border:solid 3px black;
 	border-radius:2px;
-	float:right;
+	display: inline-block;
+    vertical-align: top;
+}
+
+.simple-form input[type=number]{
+	width: 70px;
 }
 
 .simple-form{
 	margin: 10px 0px 10px 0px;
-	padding : 10px;
+	padding-top: 4px;
+	padding-bottom:4px;
+	padding-left:2px;
+	padding-right:2px;
 	border:solid 3px black;
 	border-radius:3px;
-	width:350px;
+	width:310px;
+    display: inline-block;
+    vertical-align: top;
 	
 }
 
+.simple-form label{
+	font-weight:bold;
+}
 
-
-
-form input[type=submit]{
+.simple-form input[type=submit]{
 	background:green;
 	border:solid 2px black;
 	border-radius:3px;

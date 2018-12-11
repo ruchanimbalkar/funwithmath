@@ -10,17 +10,17 @@ $(document).ready(function(){
 
 	
 	var tableResults = $("#tableResults");
-	tableResults.text("This is from jQuery. ");
+	tableResults.text("Table");
 	
 	console.log("what??");
 	
 
 	var squareResults = $("#squareResults");
-	squareResults.text("This is also from jQuery");
+	squareResults.text("Square");
 	
 	
 	var cubeResults = $("#cubeResults");
-	cubeResults.text(" So is this !");
+	cubeResults.text(" Cube !");
 	
 	$("#cubeForm").on("submit", function(){
 		
@@ -40,6 +40,8 @@ $(document).ready(function(){
 	
 	function findCube(num){
 			cubeResults.empty();
+			var title = $("<div> <p>Cube of " + num + " </p> </div>)"	);
+			cubeResults.append(title);
 			var square = num * num;
 			var cube = num * square;
 			console.log(cube);
@@ -64,6 +66,8 @@ $(document).ready(function(){
 	
 	function findSquare(num){
 			squareResults.empty();
+			var title = $("<div> <p>Square of " + num + " </p> </div>)"	);
+			squareResults.append(title);
 			var square = num * num;
 			console.log(square);
 			squareResults.append(square);
@@ -108,7 +112,7 @@ $(document).ready(function(){
 				tableResults.append(newResult);
 			}*/
 				
-			var title = "<div> <p>Table of " + num + " </p> </div>"	
+			var title = $("<div> <p>Table of " + num + " </p> </div>");	
 			tableResults.append(title);
 			$.each(table,function(i){
 				var p = num * table[i];
